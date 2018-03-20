@@ -1,6 +1,7 @@
 import {Meteor} from 'meteor/meteor'
+import "/imports/startup/server"
 
-//initialization of all application
+//Server initialization of all application
 Meteor.startup(() => {
     
 })
