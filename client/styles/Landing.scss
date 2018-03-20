@@ -1,0 +1,128 @@
+.aries-navbar{ 
+    border-radius: 0px;
+  }
+  .aries-navbar-item{
+    color: white !important;  
+  }
+  .aries-navbar-item.header{
+    font-size: 1.2em;
+    color: white !important;  
+  }
+  /* Landing Page */
+  
+  .landing-header{
+    background-image: url("http://www.gsfdcy.com/data/img/97/2283691-youtube-wallpaper.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh; 
+    display: flex !important;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+  
+  #header-title{
+    font-size: 5em;
+    color: white;
+    font-family: Montserrat;
+    font-weight: 300;
+  }
+  #header-subtitle{
+    font-size: 1.5em;
+    color: white;
+    font-family: Montserrat;
+    font-weight: 300;
+    letter-spacing: 20px;
+  }
+  
+  #header-divider{
+    width:15%;
+    background-color: white;
+    height: 2px;
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .landing-description{ 
+    display: flex !important;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    height: 50vh;
+  }
+  #title-description{
+    font-size: 2.5em;
+    color: gray;
+    font-family: Montserrat;
+    font-weight: 900;
+    letter-spacing: 5px;  
+    margin-left: 27%;
+    margin-right: 27%;
+  }
+  #description{  
+    font-size: 1.3em;
+    color: rgb(148, 148, 148);
+    font-family: Montserrat;
+    font-weight: 200;
+    letter-spacing: 3px;
+  }
+  p:first-letter{
+      text-transform: uppercase;
+      color:rgb(68, 16, 16);
+      font-style: italic;
+      font-weight: 500;
+  }
+  #remercie-text{
+    font-weight: 500;
+    color: rgb(80, 79, 79);
+    letter-spacing: 2px;
+    font-family: Montserrat;
+    font-size: 1.6em;
+  }
+  .remercie-text-grid{
+    height: 100vh; 
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    margin-left: 10%;
+    margin-right:30%;
+  
+  }
+  .movie-landing{
+    margin-left: 3%;
+    margin-right: 3%;
+    margin-top:4%;
+    margin-bottom: 4%;
+    flex-flow: column;
+  }
+  
+  .remercie-header{
+    display: flex !important;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+  #remercie-header-title{
+    font-size: 7em;
+    color: grey;
+    font-family: Montserrat;
+    font-weight: 300;
+  }
+  
+  .landing-signup{
+    display: flex !important;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    
+  }
+  
+  @media screen and (max-width: 640px) {
+    #header-title{
+      font-size: 3em;
+    }
+  }
+  .ui.grid{
+    padding-top: 0 !important
+  }

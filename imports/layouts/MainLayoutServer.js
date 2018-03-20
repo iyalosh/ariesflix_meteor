@@ -1,7 +1,14 @@
 import React, {Component} from 'react'
 import { Grid } from 'semantic-ui-react'
+import {
+    Route,
+    Switch
+} from 'react-router-dom'
+//Pages
+import LandingPage from '/imports/pages/LandingPage'
+import NotFoundPage from '/imports/pages/NotFoundPage'
 
-export default class MainLayout extends Component {
+export default class MainLayoutServer extends Component {
    state = {
        
    }
@@ -10,7 +17,8 @@ export default class MainLayout extends Component {
        return(
            <Grid stackable>
                <Grid.Column width={16}>
-                   <p> MAIN LAYOUT SERVER!</p>
+                   <Route exact path="/" component={LandingPage} />
+                   <Route path="*" component={NotFoundPage} />
                </Grid.Column>
            </Grid>
        )
