@@ -4,6 +4,7 @@ import {Route, Switch} from 'react-router-dom'
 //Pages
 import LandingPage from '/imports/pages/LandingPage'
 import NotFoundPage from '/imports/pages/NotFoundPage'
+import SignupPage from '/imports/pages/SignupPage'
 //components
 import Navbar from '/imports/components/Navbar'
 
@@ -15,8 +16,11 @@ export default class MainLayout extends Component {
             <Grid stackable>
                 <Navbar />
                 <Grid.Column className="main-container" width={16}>
-                    <Route exact path="/" component={LandingPage}/>
-                    <Route path="*" component={NotFoundPage}/>
+                    <Switch>
+                        <Route exact path="/" component={LandingPage}/>
+                        <Route exact path="/signup" component={SignupPage} />
+                        <Route path="*" component={NotFoundPage}/>
+                    </Switch>
                 </Grid.Column>
             </Grid>
         )

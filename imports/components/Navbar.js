@@ -1,6 +1,9 @@
 import React, {Component} from 'react';
 import {Menu, Dropdown} from 'semantic-ui-react';
 import {Link} from 'react-router-dom';
+
+import { withTracker } from 'meteor/react-meteor-data'
+
 export default class Navbar extends Component {
     state = {}
 
@@ -23,14 +26,20 @@ export default class Navbar extends Component {
             </Link>
             <Link to="/greetings">
                 <Menu.Item header style={{fontWeight: '100'}} position="left" className="aries-navbar-item">Remerciements</Menu.Item>
-            </Link>
+            </Link>            
             <Menu.Menu position='right'>
+                {Meteor.userId() ?
                 <Dropdown item text={username ? username:'LOGIN'}>
                     <Dropdown.Menu>
                         <Dropdown.Item>Profile</Dropdown.Item>
                         <Dropdown.Item>Déconnexion</Dropdown.Item>
                     </Dropdown.Menu>
                 </Dropdown>
+                :
+                <Link to="/signup">
+                    <Menu.Item header style={{fontWeight: '100'}} position="left" className="aries-navbar-item">Inscription</Menu.Item>
+                </Link>
+                }
             </Menu.Menu>
         </Menu>
         )
