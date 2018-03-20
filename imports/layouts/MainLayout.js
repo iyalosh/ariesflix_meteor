@@ -13,10 +13,8 @@ export default class MainLayout extends Component {
     render() {
         return (
             <Grid stackable>
-                <Grid.Column width={16}>
-                    <Navbar />
-                </Grid.Column>
-                <Grid.Column width={16}>
+                <Navbar />
+                <Grid.Column className="main-container" width={16}>
                     <Route exact path="/" component={LandingPage}/>
                     <Route path="*" component={NotFoundPage}/>
                 </Grid.Column>

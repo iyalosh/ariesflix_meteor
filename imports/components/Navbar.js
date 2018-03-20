@@ -11,7 +11,7 @@ export default class Navbar extends Component {
             size="big"
             borderless
             secondary
-            fixed={this.props.fixed}
+            fixed="top"
             className="aries-navbar"
             style={{
             backgroundColor: !this.props.transparent
