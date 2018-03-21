@@ -4,11 +4,11 @@ import {Link} from 'react-router-dom';
 
 import { withTracker } from 'meteor/react-meteor-data'
 
-export default class Navbar extends Component {
+class Navbar extends Component {
     state = {}
-
+    logout = () => Meteor.logout()
     render() {
-        const {username} = this.props
+        const {user} = this.props
         return (
             <Menu
             size="big"
@@ -28,11 +28,11 @@ export default class Navbar extends Component {
                 <Menu.Item header style={{fontWeight: '100'}} position="left" className="aries-navbar-item">Remerciements</Menu.Item>
             </Link>            
             <Menu.Menu position='right'>
-                {Meteor.userId() ?
-                <Dropdown item text={username ? username:'LOGIN'}>
+                {user ?
+                <Dropdown item text={user.username}>
                     <Dropdown.Menu>
                         <Dropdown.Item>Profile</Dropdown.Item>
-                        <Dropdown.Item>Déconnexion</Dropdown.Item>
+                        <Dropdown.Item onClick={this.logout}>Déconnexion</Dropdown.Item>
                     </Dropdown.Menu>
                 </Dropdown>
                 :
@@ -46,3 +46,9 @@ export default class Navbar extends Component {
     }
 
 }
+
+export default NavbarContainer = withTracker(() => {
+  return {
+      user: Meteor.user()
+  }
+})(Navbar)
