@@ -2,7 +2,9 @@ import React, {Component} from 'react'
 import { Grid, Loader,Header, Button } from 'semantic-ui-react'
 import { withTracker } from 'meteor/react-meteor-data'
 import {Movies} from '/imports/api/movies/movies'
+//Components
 import MovieForm from '/imports/components/MovieForm'
+import MoviePartial from '/imports/components/MoviePartial'
 
 
 class AdminMoviesPage extends Component {
@@ -15,10 +17,11 @@ class AdminMoviesPage extends Component {
        [e.target.name]: !this.state[e.target.name],
        editing_movie: null
    })
-   goToFilmForm = (editing_movie) => this.setState({
+   editMovie = (editing_movie) => this.setState({
         editing_movie,
         display_form: true
    })
+
    render(){
        const {loading, movies} = this.props
        const {display_form, editing_movie} = this.state
@@ -39,7 +42,7 @@ class AdminMoviesPage extends Component {
                         {movies.map(movie => {
                             return(
                                 <Grid.Column width={5}>
-                                    <p onClick={() => this.goToFilmForm(movie)}>{movie.title}</p>
+                                    <MoviePartial movie={movie} onClick={() => this.editMovie(movie)}/>
                                 </Grid.Column>
                             )
                         })}
