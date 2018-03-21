@@ -5,6 +5,8 @@ import {Route, Switch} from 'react-router-dom'
 import LandingPage from '/imports/pages/LandingPage'
 import NotFoundPage from '/imports/pages/NotFoundPage'
 import SignupPage from '/imports/pages/SignupPage'
+import SigninPage from '/imports/pages/SigninPage'
+
 //components
 import Navbar from '/imports/components/Navbar'
 
@@ -19,6 +21,8 @@ export default class MainLayout extends Component {
                     <Switch>
                         <Route exact path="/" component={LandingPage}/>
                         <Route exact path="/signup" component={SignupPage} />
+                        <Route exact path="/signup" component={SignupPage} />
+                        <Route exact path="/signin" component={SigninPage} />
                         <Route path="*" component={NotFoundPage}/>
                     </Switch>
                 </Grid.Column>
