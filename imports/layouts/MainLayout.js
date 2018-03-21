@@ -6,7 +6,7 @@ import LandingPage from '/imports/pages/LandingPage'
 import SignupPage from '/imports/pages/SignupPage'
 import NotFoundPage from '/imports/pages/NotFoundPage'
 import SigninPage from '/imports/pages/SigninPage'
-
+import { ToastContainer, toast } from 'react-toastify';
 //components
 import Navbar from '/imports/components/Navbar'
 
@@ -24,6 +24,7 @@ export default class MainLayout extends Component {
                         <Route exact path="/signin" component={SigninPage} />
                         <Route path="*" component={NotFoundPage}/>
                     </Switch>
+                    <ToastContainer />
                 </Grid.Column>
             </Grid>
         )

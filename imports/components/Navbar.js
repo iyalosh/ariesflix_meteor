@@ -31,8 +31,10 @@ class Navbar extends Component {
                 {user ?
                 <Dropdown item text={user.username}>
                     <Dropdown.Menu>
-                        <Dropdown.Item>Profile</Dropdown.Item>
-                        <Dropdown.Item onClick={this.logout}>Déconnexion</Dropdown.Item>
+                    <Link to="/admin/movies">
+                    <Dropdown.Item>Gestion des films</Dropdown.Item>
+                    </Link>
+                    <Dropdown.Item onClick={this.logout}>Déconnexion</Dropdown.Item>
                     </Dropdown.Menu>
                 </Dropdown>
                 :
