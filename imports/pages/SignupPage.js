@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import { Grid,Header,Button,Form } from 'semantic-ui-react'
+import { Grid,Header,Button,Form,Container } from 'semantic-ui-react'
 
 export default class SignupPage extends Component {
    state = {
@@ -27,6 +27,7 @@ export default class SignupPage extends Component {
        return(
            <Grid stackable>
                <Grid.Column width={16}>
+               <Container>
                    <Header as='h1'> Inscrivez-vous </Header>
                    <Form onSubmit={this.signup}>
                         <Form.Input
@@ -51,6 +52,7 @@ export default class SignupPage extends Component {
                         />
                         <Button color="black"> JE M'INSCRIS </Button>
                    </Form>
+                   </Container>
                </Grid.Column>
            </Grid>
        )

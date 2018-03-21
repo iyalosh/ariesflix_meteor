@@ -36,10 +36,15 @@ class Navbar extends Component {
                     </Dropdown.Menu>
                 </Dropdown>
                 :
-                <Link to="/signup">
-                    <Menu.Item header style={{fontWeight: '100'}} position="left" className="aries-navbar-item">Inscription</Menu.Item>
-                </Link>
-                }
+                [
+                    <Link to="/signup">
+                      <Menu.Item header style={{fontWeight: '100'}} position="left" className="aries-navbar-item">Inscription</Menu.Item>
+                    </Link>,
+                    <Link to="/signin">
+                       <Menu.Item header style={{fontWeight: '100'}} position="left" className="aries-navbar-item">Connexion</Menu.Item>
+                    </Link>
+                ] 
+            }
             </Menu.Menu>
         </Menu>
         )
