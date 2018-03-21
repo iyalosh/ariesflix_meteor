@@ -7,15 +7,21 @@ import MovieForm from '/imports/components/MovieForm'
 
 class AdminMoviesPage extends Component {
    state = {
-       display_form: false
+       display_form: false,
+       editing_movie: null
    }
 
    toggleState = (e) => this.setState({
-       [e.target.name]: !this.state[e.target.name]
+       [e.target.name]: !this.state[e.target.name],
+       editing_movie: null
+   })
+   goToFilmForm = (editing_movie) => this.setState({
+        editing_movie,
+        display_form: true
    })
    render(){
        const {loading, movies} = this.props
-       const {display_form} = this.state
+       const {display_form, editing_movie} = this.state
        if(!loading){
        return(
            <Grid stackable>
@@ -26,14 +32,14 @@ class AdminMoviesPage extends Component {
                    </Button>
                </Grid.Column>
                {display_form ?
-                <MovieForm />
+                <MovieForm movie={editing_movie} />
                :
                 <Grid.Column width={16}>
                     <Grid stackable>
                         {movies.map(movie => {
                             return(
                                 <Grid.Column width={5}>
-                                    <p>{movie.title}</p>
+                                    <p onClick={() => this.goToFilmForm(movie)}>{movie.title}</p>
                                 </Grid.Column>
                             )
                         })}
