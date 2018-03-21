@@ -20,3 +20,6 @@ fourseven:scss
 react-meteor-data
 accounts-password
 meteortoys:allthings
+aldeed:simple-schema
+aldeed:collection2
+

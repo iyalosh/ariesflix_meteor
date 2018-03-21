@@ -3,8 +3,8 @@ import {Grid} from 'semantic-ui-react'
 import {Route, Switch} from 'react-router-dom'
 //Pages
 import LandingPage from '/imports/pages/LandingPage'
-import NotFoundPage from '/imports/pages/NotFoundPage'
 import SignupPage from '/imports/pages/SignupPage'
+import NotFoundPage from '/imports/pages/NotFoundPage'
 import SigninPage from '/imports/pages/SigninPage'
 
 //components
@@ -20,7 +20,6 @@ export default class MainLayout extends Component {
                 <Grid.Column className="main-container" width={16}>
                     <Switch>
                         <Route exact path="/" component={LandingPage}/>
-                        <Route exact path="/signup" component={SignupPage} />
                         <Route exact path="/signup" component={SignupPage} />
                         <Route exact path="/signin" component={SigninPage} />
                         <Route path="*" component={NotFoundPage}/>
